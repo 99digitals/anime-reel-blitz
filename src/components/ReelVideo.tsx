@@ -4,11 +4,10 @@ import { Play, Pause } from 'lucide-react';
 
 interface ReelVideoProps {
   videoUrl: string;
-  thumbnailUrl?: string;
   title: string;
 }
 
-export const ReelVideo = ({ videoUrl, thumbnailUrl, title }: ReelVideoProps) => {
+export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -28,7 +27,7 @@ export const ReelVideo = ({ videoUrl, thumbnailUrl, title }: ReelVideoProps) => 
       <video
         ref={videoRef}
         src={videoUrl}
-        poster={thumbnailUrl || videoUrl}
+        poster={videoUrl + '#t=0.5'} // Use the video itself as a thumbnail
         className="w-full h-full object-cover"
         loop
         playsInline

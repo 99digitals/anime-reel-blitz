@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <WhatsAppWidget phoneNumber="1234567890" />
+      <WhatsAppWidget phoneNumber="919103395556" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

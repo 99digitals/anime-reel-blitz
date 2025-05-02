@@ -24,13 +24,13 @@ export const PricingSection = () => {
         
         <div className="max-w-md mx-auto bg-white rounded-2xl overflow-hidden shadow-xl border border-anime-purple/20">
           <div className="bg-anime-purple text-white p-8 text-center">
-            <h3 className="text-2xl font-bold">1800 Anime Reels Bundle</h3>
+            <h3 className="text-2xl font-bold">1800+ Anime Reels Bundle</h3>
             <div className="flex items-center justify-center mt-4 space-x-1">
-              <span className="text-4xl font-bold">$97</span>
+              <span className="text-4xl font-bold">₹199</span>
               <span className="text-lg opacity-80">one-time</span>
             </div>
             <p className="mt-2 text-anime-soft-purple/80 text-sm">
-              <span className="line-through">$297</span> Limited time offer!
+              <span className="line-through">₹999</span> Limited time offer!
             </p>
           </div>
           
@@ -46,7 +46,7 @@ export const PricingSection = () => {
             
             <Button 
               className="mt-8 w-full bg-anime-orange hover:bg-anime-orange/90 text-white font-medium py-6 rounded-lg text-lg animate-pulse-light"
-              onClick={() => window.open("https://shop.worklinc.com/product/1800-anime-reels-bundle/", "_blank")}
+              onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
             >
               Get Instant Access
             </Button>
