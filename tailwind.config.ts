@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				anime: {
+					purple: '#9b87f5',
+					'dark-purple': '#7E69AB',
+					'soft-purple': '#E5DEFF',
+					pink: '#FFDEE2',
+					orange: '#F97316',
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,41 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					},
+					'100%': {
+						transform: 'translateY(0px)'
+					}
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' },
+				},
+				'pulse-light': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'wiggle': 'wiggle 2s ease-in-out infinite',
+				'pulse-light': 'pulse-light 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
+			backgroundImage: {
+				'purple-gradient': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
+				'orange-gradient': 'linear-gradient(90deg, hsla(39, 100%, 77%, 1) 0%, hsla(22, 90%, 57%, 1) 100%)',
+				'pink-gradient': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
 			}
 		}
 	},
