@@ -35,7 +35,15 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
       />
       
       <div className="video-overlay-icon">
-        {playing ? <Pause size={48} /> : <Play size={48} />}
+        {playing ? (
+          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110">
+            <Pause className="text-white" size={40} />
+          </div>
+        ) : (
+          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110">
+            <Play className="text-white ml-1" size={40} />
+          </div>
+        )}
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
@@ -43,6 +51,10 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      
+      {/* Anime-themed decorative elements */}
+      <div className="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2 border-anime-pink opacity-40"></div>
+      <div className="absolute bottom-2 left-2 w-12 h-12 border-b-2 border-l-2 border-anime-pink opacity-40"></div>
     </div>
   );
 };

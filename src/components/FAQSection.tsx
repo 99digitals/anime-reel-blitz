@@ -26,7 +26,7 @@ export const FAQSection = () => {
     },
     {
       question: "How will I receive the reels after purchase?",
-      answer: "Immediately after your purchase, you'll receive a download link where you can access all 1800+ reels. The link will be active for 7 days, and you'll also receive it in your email."
+      answer: "Immediately after your purchase, you'll receive a download link where you can access all 1800+ reels. You'll also receive it in your email."
     }
   ];
 

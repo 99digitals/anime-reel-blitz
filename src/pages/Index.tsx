@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ReelVideo } from '@/components/ReelVideo';
 import { PricingSection } from '@/components/PricingSection';
@@ -106,7 +105,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-anime-soft-purple via-white to-anime-pink/20">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-clip-text text-transparent bg-purple-gradient">1800+ Anime Reels</span> to 
               <span className="bg-clip-text text-transparent bg-orange-gradient"> Supercharge </span>
@@ -148,7 +147,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <div className="bg-white p-3 rounded-3xl shadow-xl max-w-md mx-auto">
               <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <img 

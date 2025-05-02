@@ -61,11 +61,12 @@
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(155, 135, 245, 0.2);
 }
 
 .video-card::after {
@@ -91,12 +92,13 @@
   color: white;
   font-size: 2rem;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
 }
 
 .video-card:hover .video-overlay-icon {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .floating-animation {
@@ -120,4 +122,14 @@
   right: 20px;
   bottom: 20px;
   z-index: 1000;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
