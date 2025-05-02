@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { WhatsApp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface WhatsAppWidgetProps {
@@ -26,7 +26,7 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
         onClick={handleWhatsAppClick}
       >
         <div className="relative w-14 h-14 flex items-center justify-center bg-green-500 rounded-full animate-pulse-light overflow-hidden">
-          <WhatsApp size={28} className="text-white" />
+          <MessageCircle size={28} className="text-white" />
           <div className="absolute inset-0 bg-green-400 rounded-full animate-pulse opacity-40"></div>
         </div>
         

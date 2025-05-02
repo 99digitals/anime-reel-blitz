@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, WhatsApp } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
@@ -51,7 +51,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-green-500 text-white rounded-full hover:scale-110 transition-transform"
               >
-                <WhatsApp size={20} />
+                <MessageCircle size={20} />
               </a>
               <a 
                 href="https://instagram.com" 
