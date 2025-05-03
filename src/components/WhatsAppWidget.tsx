@@ -61,7 +61,8 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
           {/* Anime Girl Animation */}
           <div className="absolute -bottom-2 -right-2 z-10 animation-container">
             <div className="anime-girl">
-              <style jsx>{`
+              <style>
+                {`
                 @keyframes climbUp {
                   0% { transform: translateY(100%) rotate(5deg); }
                   70% { transform: translateY(-5%) rotate(-2deg); }
@@ -124,7 +125,8 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
                   opacity: 0;
                   animation: blinking 4s infinite;
                 }
-              `}</style>
+                `}
+              </style>
               <div className="anime-girl-speech">Hi!</div>
             </div>
           </div>
