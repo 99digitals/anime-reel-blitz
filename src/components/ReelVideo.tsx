@@ -10,22 +10,8 @@ interface ReelVideoProps {
 export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
-  useEffect(() => {
-    // Ensure thumbnail is loaded
-    if (videoRef.current) {
-      const video = videoRef.current;
-      
-      // Once metadata is loaded, pause the video to show the first frame as thumbnail
-      video.addEventListener('loadedmetadata', () => {
-        video.currentTime = 0.5; // Set to a frame that shows good thumbnail
-        setThumbnailLoaded(true);
-      });
-    }
-  }, []);
-
   const togglePlay = () => {
     if (videoRef.current) {
       if (playing) {

@@ -20,9 +20,9 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
   return (
     <div className="whatsapp-widget fixed right-4 bottom-4 z-40 flex flex-col items-end">
       {isExpanded ? (
-        <div className="flex flex-col items-end animate-fade-in">
+        <div className="flex flex-col items-end">
           <div 
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-4 mb-3 transform transition-all duration-300 max-w-[220px] border-2 border-green-400"
+            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-4 mb-3 transform transition-all duration-300 animate-fade-in max-w-[220px] border-2 border-green-400"
           >
             <div className="flex justify-between items-center mb-2">
               <span className="font-semibold text-gray-700 text-sm">Need help?</span>
@@ -38,99 +38,24 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
               onClick={handleWhatsAppClick} 
               className="bg-green-500 hover:bg-green-600 text-white w-full py-2 rounded-xl flex items-center justify-center text-sm"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 mr-1 fill-current">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              <svg viewBox="0 0 32 32" className="w-4 h-4 mr-1 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.004 0h-0.008c-8.837 0-16 7.163-16 16 0 3.497 1.123 6.741 3.029 9.377l-1.988 5.901 6.091-1.947c2.529 1.668 5.537 2.638 8.77 2.669 0.030 0 0.061 0 0.093 0 8.835 0 16.004-7.163 16.004-16s-7.169-16-16.004-16zM25.315 22.647c-0.481 1.359-2.393 2.483-3.912 2.813-1.041 0.224-2.402 0.405-6.982-1.497-5.86-2.433-9.646-8.376-9.941-8.764-0.283-0.387-2.371-3.15-2.371-6.011 0-2.863 1.458-4.258 2.026-4.839 0.452-0.495 1.2-0.723 1.916-0.723 0.232 0 0.439 0.011 0.627 0.019 0.549 0.023 0.825 0.056 1.188 0.923 0.452 1.092 1.551 3.792 1.681 4.072 0.133 0.28 0.267 0.659 0.076 1.026-0.177 0.387-0.325 0.561-0.603 0.893-0.277 0.332-0.541 0.585-0.819 0.941-0.253 0.309-0.54 0.642-0.221 1.216 0.32 0.573 1.423 2.448 3.055 3.961 2.105 1.948 3.883 2.553 4.441 2.837 0.407 0.204 0.892 0.157 1.196-0.187 0.381-0.435 0.852-1.156 1.328-1.861 0.336-0.499 0.76-0.557 1.208-0.385 0.452 0.165 2.849 1.341 3.339 1.587 0.491 0.243 0.815 0.368 0.932 0.574 0.121 0.206 0.121 1.176-0.361 2.537z"/>
               </svg>
               Chat on WhatsApp
             </button>
           </div>
         </div>
       ) : (
-        <div className="relative">
-          <button 
-            onClick={handleToggle}
-            className="relative w-14 h-14 flex items-center justify-center bg-green-500 rounded-full shadow-lg shadow-green-300/50 overflow-hidden border-2 border-white"
-            aria-label="Open chat"
-          >
-            {/* WhatsApp Logo */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-8 h-8 text-white fill-current">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-            </svg>
-          </button>
-          
-          {/* Anime Girl Animation */}
-          <div className="absolute -bottom-2 -right-2 z-10 animation-container">
-            <div className="anime-girl">
-              <style>
-                {`
-                @keyframes climbUp {
-                  0% { transform: translateY(100%) rotate(5deg); }
-                  70% { transform: translateY(-5%) rotate(-2deg); }
-                  80% { transform: translateY(-20%) rotate(0deg); }
-                  90% { transform: translateY(-5%) rotate(-5deg); }
-                  100% { transform: translateY(100%) rotate(10deg); }
-                }
-                
-                @keyframes wavingHand {
-                  0% { transform: rotate(0deg); }
-                  25% { transform: rotate(20deg); }
-                  50% { transform: rotate(0deg); }
-                  75% { transform: rotate(20deg); }
-                  100% { transform: rotate(0deg); }
-                }
-                
-                @keyframes blinking {
-                  0% { opacity: 1; }
-                  49% { opacity: 1; }
-                  50% { opacity: 0; }
-                  100% { opacity: 0; }
-                }
-                
-                .anime-girl {
-                  position: absolute;
-                  bottom: -10px;
-                  right: -10px;
-                  width: 45px;
-                  height: 45px;
-                  animation: climbUp 4s ease-in-out infinite;
-                  z-index: -1;
-                }
-                
-                .anime-girl::before {
-                  content: '👧';
-                  font-size: 36px;
-                  position: absolute;
-                  bottom: 0;
-                  right: 0;
-                }
-                
-                .anime-girl::after {
-                  content: '👋';
-                  font-size: 20px;
-                  position: absolute;
-                  top: -15px;
-                  right: 10px;
-                  animation: wavingHand 0.5s ease-in-out infinite;
-                  transform-origin: bottom center;
-                }
-                
-                .anime-girl-speech {
-                  position: absolute;
-                  top: -25px;
-                  right: -5px;
-                  background: white;
-                  border-radius: 10px;
-                  padding: 3px 6px;
-                  font-size: 12px;
-                  opacity: 0;
-                  animation: blinking 4s infinite;
-                }
-                `}
-              </style>
-              <div className="anime-girl-speech">Hi!</div>
-            </div>
-          </div>
-        </div>
+        <button 
+          onClick={handleToggle}
+          className="relative w-14 h-14 flex items-center justify-center bg-green-500 rounded-full shadow-lg shadow-green-300/50 overflow-hidden border-2 border-white animate-float"
+          aria-label="Open chat"
+        >
+          <div className="absolute inset-0 bg-green-400 rounded-full animate-pulse opacity-30"></div>
+          <svg viewBox="0 0 32 32" className="w-8 h-8 text-white fill-current" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.004 0h-0.008c-8.837 0-16 7.163-16 16 0 3.497 1.123 6.741 3.029 9.377l-1.988 5.901 6.091-1.947c2.529 1.668 5.537 2.638 8.77 2.669 0.030 0 0.061 0 0.093 0 8.835 0 16.004-7.163 16.004-16s-7.169-16-16.004-16zM25.315 22.647c-0.481 1.359-2.393 2.483-3.912 2.813-1.041 0.224-2.402 0.405-6.982-1.497-5.86-2.433-9.646-8.376-9.941-8.764-0.283-0.387-2.371-3.15-2.371-6.011 0-2.863 1.458-4.258 2.026-4.839 0.452-0.495 1.2-0.723 1.916-0.723 0.232 0 0.439 0.011 0.627 0.019 0.549 0.023 0.825 0.056 1.188 0.923 0.452 1.092 1.551 3.792 1.681 4.072 0.133 0.28 0.267 0.659 0.076 1.026-0.177 0.387-0.325 0.561-0.603 0.893-0.277 0.332-0.541 0.585-0.819 0.941-0.253 0.309-0.54 0.642-0.221 1.216 0.32 0.573 1.423 2.448 3.055 3.961 2.105 1.948 3.883 2.553 4.441 2.837 0.407 0.204 0.892 0.157 1.196-0.187 0.381-0.435 0.852-1.156 1.328-1.861 0.336-0.499 0.76-0.557 1.208-0.385 0.452 0.165 2.849 1.341 3.339 1.587 0.491 0.243 0.815 0.368 0.932 0.574 0.121 0.206 0.121 1.176-0.361 2.537z"/>
+          </svg>
+        </button>
       )}
     </div>
   );
