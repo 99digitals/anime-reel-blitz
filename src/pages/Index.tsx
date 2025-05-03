@@ -5,7 +5,6 @@ import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 import { Footer } from '@/components/Footer';
 import { FAQSection } from '@/components/FAQSection';
 import { CountdownTimer } from '@/components/CountdownTimer';
-import { SocialProofNotifications } from '@/components/SocialProofNotifications';
 import { ArrowDown, Star, TrendingUp, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -60,14 +59,17 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
   const scrollToReels = () => {
     document.getElementById('preview-section')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+  
   const redirectToPurchase = () => {
     window.open("https://rzp.io/rzp/L0POQliw", "_blank");
   };
+  
   return <div className="min-h-screen">
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'py-4'}`}>
@@ -261,9 +263,6 @@ const Index = () => {
       
       {/* WhatsApp Widget */}
       <WhatsAppWidget phoneNumber="919103395556" />
-      
-      {/* Social Proof Notifications */}
-      <SocialProofNotifications />
     </div>;
 };
 export default Index;

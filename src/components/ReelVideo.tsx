@@ -9,7 +9,7 @@ interface ReelVideoProps {
 
 export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
   const togglePlay = () => {
@@ -44,7 +44,7 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
         preload="metadata"
       />
       
-      <div className="video-overlay-icon">
+      <div className="video-overlay-icon opacity-100 group-hover:opacity-100">
         {playing ? (
           <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110">
             <Pause className="text-white" size={40} />
@@ -67,7 +67,7 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
         <h3 className="text-white font-medium text-lg">{title}</h3>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
       
       {/* Anime-themed decorative elements */}
       <div className="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2 border-anime-pink opacity-40"></div>

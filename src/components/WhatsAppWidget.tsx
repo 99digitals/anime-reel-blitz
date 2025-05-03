@@ -44,12 +44,6 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
               Chat on WhatsApp
             </button>
           </div>
-          <button 
-            onClick={handleToggle}
-            className="relative w-12 h-12 flex items-center justify-center bg-green-500 rounded-full shadow-lg shadow-green-300/50 animate-pulse-light"
-          >
-            <X size={24} className="text-white" />
-          </button>
         </div>
       ) : (
         <button 
