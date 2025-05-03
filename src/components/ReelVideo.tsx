@@ -1,5 +1,5 @@
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 
 interface ReelVideoProps {
@@ -9,7 +9,46 @@ interface ReelVideoProps {
 
 export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
+  const [thumbnail, setThumbnail] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Generate thumbnail from the video
+    if (videoRef.current) {
+      const video = videoRef.current;
+      
+      // When metadata is loaded, capture a frame for the thumbnail
+      const handleMetadataLoaded = () => {
+        video.currentTime = 0.5; // Set to 0.5 seconds to capture a good frame
+      };
+
+      // When time updates after setting currentTime, capture the frame
+      const handleTimeUpdate = () => {
+        if (!playing && !thumbnail) {
+          const canvas = document.createElement('canvas');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          canvas.getContext('2d')?.drawImage(video, 0, 0, canvas.width, canvas.height);
+          setThumbnail(canvas.toDataURL('image/jpeg'));
+          
+          // Reset to beginning
+          video.currentTime = 0;
+          
+          // Remove listeners after thumbnail is created
+          video.removeEventListener('loadedmetadata', handleMetadataLoaded);
+          video.removeEventListener('timeupdate', handleTimeUpdate);
+        }
+      };
+
+      video.addEventListener('loadedmetadata', handleMetadataLoaded);
+      video.addEventListener('timeupdate', handleTimeUpdate);
+
+      return () => {
+        video.removeEventListener('loadedmetadata', handleMetadataLoaded);
+        video.removeEventListener('timeupdate', handleTimeUpdate);
+      };
+    }
+  }, [videoRef, thumbnail, playing]);
 
   const handlePlayToggle = () => {
     if (videoRef.current) {
@@ -27,12 +66,22 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
       <video
         ref={videoRef}
         src={videoUrl}
-        poster={videoUrl + '#t=0.5'} // Use the video itself as a thumbnail
         className="w-full h-full object-cover"
         loop
         playsInline
         muted
+        preload="metadata"
       />
+      
+      {thumbnail && !playing && (
+        <div className="absolute inset-0 z-10">
+          <img 
+            src={thumbnail} 
+            alt={title} 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       
       <div className="video-overlay-icon">
         {playing ? (

@@ -1,9 +1,12 @@
+
 import { useState, useEffect } from 'react';
 import { ReelVideo } from '@/components/ReelVideo';
 import { PricingSection } from '@/components/PricingSection';
 import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 import { Footer } from '@/components/Footer';
 import { FAQSection } from '@/components/FAQSection';
+import { CountdownTimer } from '@/components/CountdownTimer';
+import { SocialProofNotifications } from '@/components/SocialProofNotifications';
 import { ArrowDown, Star, TrendingUp, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -36,12 +39,12 @@ const reelVideos = [
   }
 ];
 
-// Indian user images
+// Indian user images with real URLs
 const userImages = [
-  "/lovable-uploads/indian-woman-1.jpg",
-  "/lovable-uploads/indian-woman-2.jpg",
-  "/lovable-uploads/indian-woman-3.jpg",
-  "/lovable-uploads/indian-man-1.jpg"
+  "https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740",
+  "https://img.freepik.com/free-photo/young-man-thinking-with-pensive-expression-ai-generated_1194-588529.jpg?t=st=1746212759~exp=1746216359~hmac=99b380c7a03f66e68f9a0952aaf53596cf5b4903386cc4fc24f2004235460fa8&w=826",
+  "https://img.freepik.com/free-photo/fashionable-young-woman-standing-front-blue-backdrop_23-2148204718.jpg?t=st=1746212760~exp=1746216360~hmac=b01d8d29b0ab2538a8adfa39c37a644b3f2d25a00b75f0ec89fcf97bd90b1795&w=826",
+  "https://img.freepik.com/free-photo/photorealistic-lawyer-day-celebration_23-2151053984.jpg?t=st=1746212763~exp=1746216363~hmac=27235254b1ad4b87df97dfa17407c944c873efebd5e991cf98daae0027952b58&w=826"
 ];
 
 // Updated testimonials with Indian names
@@ -218,6 +221,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Countdown Timer Section */}
+      <CountdownTimer />
+
       {/* Preview Section */}
       <section id="preview-section" className="py-16 px-4 bg-gradient-to-b from-white to-anime-soft-purple/20">
         <div className="container mx-auto">
@@ -313,6 +319,9 @@ const Index = () => {
       
       {/* WhatsApp Widget */}
       <WhatsAppWidget phoneNumber="919103395556" />
+      
+      {/* Social Proof Notifications */}
+      <SocialProofNotifications />
     </div>
   );
 };
