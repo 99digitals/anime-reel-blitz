@@ -84,46 +84,6 @@
   pointer-events: none;
 }
 
-.video-overlay-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
-}
-
-.video-card:hover .video-overlay-icon {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.floating-animation {
-  animation: floating 4s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, -10px);
-  }
-  100% {
-    transform: translate(0, 0px);
-  }
-}
-
-.whatsapp-widget {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1000;
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -195,74 +155,60 @@
   animation: pulse-light 2s infinite;
 }
 
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
 .animate-glow {
   animation: glow 2s infinite;
-}
-
-/* Video styling enhancements */
-.video-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(155, 135, 245, 0.2);
-  transition: all 0.3s ease;
-}
-
-.video-card:hover::before {
-  opacity: 1;
-}
-
-.video-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  background: linear-gradient(45deg, #9b87f5, #ff86b3, #9b87f5);
-  border-radius: 18px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 2s infinite ease-in-out;
-}
-
-/* Enhanced CTA button animations */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 10px 2px rgba(249, 115, 22, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 20px 6px rgba(249, 115, 22, 0.7);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite ease-in-out;
 }
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.25rem !important;
+    font-size: 2rem !important;
     line-height: 1.2 !important;
   }
   
   h2 {
-    font-size: 1.75rem !important;
+    font-size: 1.5rem !important;
   }
   
   .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
+
+  /* Fix button text overflow */
+  button {
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 2.5rem;
+  }
+
+  /* Adjust spacing for mobile */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Enhanced button styles for better mobile UX */
+.cta-button {
+  @apply text-center px-4 py-3 rounded-lg font-bold transition-all duration-300 transform w-full md:w-auto;
+  white-space: normal !important;
+  height: auto !important;
+  min-height: 2.75rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-primary {
+  @apply bg-anime-orange text-white shadow-lg hover:bg-anime-orange/90 hover:scale-105;
+}
+
+.cta-secondary {
+  @apply bg-anime-purple text-white shadow-lg hover:bg-anime-purple/90 hover:scale-105;
 }

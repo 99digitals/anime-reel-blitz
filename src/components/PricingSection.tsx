@@ -12,46 +12,50 @@ export const PricingSection = () => {
     "Regular updates with fresh content"
   ];
   
+  const handlePurchase = () => {
+    window.open("https://rzp.io/rzp/L0POQliw", "_blank");
+  };
+  
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 px-4 md:py-16">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-purple-gradient">Pricing That Makes Sense</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-purple-gradient">Pricing That Makes Sense</h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Unlock the full power of anime for your social media presence at an unbeatable price
           </p>
         </div>
         
-        <div className="max-w-md mx-auto bg-white rounded-2xl overflow-hidden shadow-xl border border-anime-purple/20">
-          <div className="bg-anime-purple text-white p-8 text-center">
-            <h3 className="text-2xl font-bold">1800+ Anime Reels Bundle</h3>
-            <div className="flex items-center justify-center mt-4 space-x-1">
-              <span className="text-4xl font-bold">₹199</span>
-              <span className="text-lg opacity-80">one-time</span>
+        <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-xl border border-anime-purple/20">
+          <div className="bg-anime-purple text-white p-6 text-center">
+            <h3 className="text-xl md:text-2xl font-bold">1800+ Anime Reels Bundle</h3>
+            <div className="flex items-center justify-center mt-3 space-x-1">
+              <span className="text-3xl md:text-4xl font-bold">₹199</span>
+              <span className="text-base opacity-80">one-time</span>
             </div>
             <p className="mt-2 text-anime-soft-purple/80 text-sm">
               <span className="line-through">₹999</span> Limited time offer!
             </p>
           </div>
           
-          <div className="p-8">
-            <ul className="space-y-4">
+          <div className="p-6">
+            <ul className="space-y-3">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                  <span>{feature}</span>
+                  <span className="text-sm md:text-base">{feature}</span>
                 </li>
               ))}
             </ul>
             
             <Button 
-              className="mt-8 w-full bg-anime-orange hover:bg-anime-orange/90 text-white font-medium py-6 rounded-lg text-lg animate-pulse-light"
-              onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
+              className="mt-6 w-full bg-anime-orange hover:bg-anime-orange/90 text-white font-bold py-4 rounded-lg text-base animate-pulse-light h-auto"
+              onClick={handlePurchase}
             >
               Get Instant Access
             </Button>
             
-            <p className="text-center text-sm text-gray-500 mt-4">
+            <p className="text-center text-xs md:text-sm text-gray-500 mt-3">
               Secure checkout • Instant delivery • 30-day guarantee
             </p>
           </div>
