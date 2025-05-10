@@ -9,7 +9,6 @@ import { CountdownTimer } from '@/components/CountdownTimer';
 import { ArrowDown, CheckCircle, Star, TrendingUp, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SocialProofNotifications } from '@/components/SocialProofNotifications';
 
 // Updated reel video URLs
 const reelVideos = [{
@@ -96,64 +95,12 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Simplified and More Powerful */}
-      <section className="pt-28 pb-16 px-4 bg-gradient-to-br from-anime-soft-purple via-white to-anime-pink/20">
+      {/* Hero Section - Optimized for Mobile */}
+      <section className="pt-28 pb-12 px-4 bg-gradient-to-br from-anime-soft-purple via-white to-anime-pink/20">
         <div className="container mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-block px-3 py-1 bg-anime-purple/10 text-anime-purple rounded-full text-sm font-medium mb-3">
-              Limited Time Offer - 80% OFF
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
-              <span className="bg-clip-text text-transparent bg-purple-gradient">1800+ Anime Reels</span> That Will 
-              <span className="bg-clip-text text-transparent bg-orange-gradient"> 10x Your Following </span>
-              In 30 Days
-            </h1>
-            
-            <p className="text-lg md:text-xl mb-6 text-gray-700 max-w-2xl mx-auto">
-              Ready-to-post anime reels that <span className="font-bold">trigger the algorithm</span> and make your content go viral across all platforms
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <ul className="space-y-3 mb-6">
-                  {benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start">
-                      <CheckCircle className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg w-full animate-pulse-light" onClick={redirectToPurchase}>
-                    Get 80% OFF Now - Only ₹199
-                  </Button>
-                </div>
-                
-                <div className="mt-4 flex items-center justify-center">
-                  <div className="flex -space-x-2">
-                    {userImages.map((image, i) => <Avatar key={i} className="border-2 border-white w-8 h-8">
-                        <AvatarImage src={image} alt={`User ${i + 1}`} />
-                        <AvatarFallback>{i + 1}</AvatarFallback>
-                      </Avatar>)}
-                  </div>
-                  <div className="ml-3 text-sm">
-                    <span className="text-anime-purple font-semibold">4.9/5</span> 
-                    <span className="text-gray-500 ml-1">from 2000+ creators</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-6 text-center">
-                <Button variant="ghost" className="text-gray-500 flex items-center gap-1" onClick={scrollToReels}>
-                  See examples <ArrowDown className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative order-1 lg:order-2">
+          {/* Image first on mobile */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="bg-white p-3 rounded-3xl shadow-xl max-w-md mx-auto">
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
                   <img alt="1800 Anime Reels Bundle" className="w-full h-full object-cover" onError={e => {
@@ -173,27 +120,89 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className="inline-block px-3 py-1 bg-anime-purple/10 text-anime-purple rounded-full text-sm font-medium mb-3">
+                Limited Time Offer - 80% OFF
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                <span className="bg-clip-text text-transparent bg-purple-gradient">1800+ Anime Reels</span> That Will 
+                <span className="bg-clip-text text-transparent bg-orange-gradient"> 10x Your Following </span>
+                In 30 Days
+              </h1>
+              
+              <p className="text-lg md:text-xl mb-6 text-gray-700">
+                Ready-to-post anime reels that <span className="font-bold">trigger the algorithm</span> and make your content go viral across all platforms
+              </p>
+
+              {/* Enhanced CTA */}
+              <Button 
+                className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-7 text-xl w-full lg:w-auto font-bold tracking-wide shadow-lg animate-pulse-slow mb-4"
+                onClick={redirectToPurchase}
+              >
+                GET 80% OFF NOW - ONLY ₹199
+              </Button>
+
+              <div className="mt-4 flex items-center justify-center lg:justify-start">
+                <div className="flex -space-x-2">
+                  {userImages.map((image, i) => <Avatar key={i} className="border-2 border-white w-8 h-8">
+                      <AvatarImage src={image} alt={`User ${i + 1}`} />
+                      <AvatarFallback>{i + 1}</AvatarFallback>
+                    </Avatar>)}
+                </div>
+                <div className="ml-3 text-sm">
+                  <span className="text-anime-purple font-semibold">4.9/5</span> 
+                  <span className="text-gray-500 ml-1">from 2000+ creators</span>
+                </div>
+              </div>
+              
+              <Button variant="ghost" className="mt-6 text-gray-500 flex items-center mx-auto lg:mx-0 gap-1" onClick={scrollToReels}>
+                See examples <ArrowDown className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Notifications */}
-      <SocialProofNotifications />
-
       {/* Countdown Timer - Urgency */}
       <CountdownTimer />
 
-      {/* Features Section - Benefits Focused */}
-      <section className="py-16 px-4 bg-white">
+      {/* Benefits Section - Mobile Optimized */}
+      <section className="py-12 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why <span className="bg-clip-text text-transparent bg-purple-gradient">Creators Are Going Viral</span> With Our Reels</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join thousands who transformed their social media presence overnight
+          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Why These Reels Convert</h2>
+            <ul className="space-y-4">
+              {benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            
+            {/* Bold CTA in Benefits Section */}
+            <Button 
+              className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg font-bold w-full mt-8 shadow-lg animate-pulse-light tracking-wide"
+              onClick={redirectToPurchase}
+            >
+              GET ALL 1800+ REELS NOW
+            </Button>
+            <p className="text-center text-sm text-gray-500 mt-3">
+              Secure payment • Instant delivery • 30-day guarantee
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Features Section - Benefits Focused */}
+      <section className="py-12 px-4 bg-gradient-to-t from-anime-soft-purple/20 to-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Why <span className="bg-clip-text text-transparent bg-purple-gradient">Creators Are Going Viral</span> With Our Reels</h2>
+          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[{
             icon: <TrendingUp className="h-8 w-8 text-anime-purple" />,
             title: "Trigger The Algorithm",
@@ -207,39 +216,43 @@ const Index = () => {
             title: "Monetize Immediately",
             description: "Content that attracts brand deals and sponsorships. Many creators land paid partnerships within weeks."
           }].map((feature, index) => <div key={index} className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="bg-anime-purple/10 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-anime-purple/10 w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-center">{feature.title}</h3>
+                <p className="text-gray-600 text-center">{feature.description}</p>
               </div>)}
           </div>
         </div>
       </section>
 
       {/* Preview Section - Social Proof */}
-      <section id="preview-section" className="py-16 px-4 bg-gradient-to-b from-white to-anime-soft-purple/20">
+      <section id="preview-section" className="py-12 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-clip-text text-transparent bg-purple-gradient">See The Content</span> That's Creating Viral Accounts
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <span className="bg-clip-text text-transparent bg-purple-gradient">Preview The Content</span> Creating Viral Accounts
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These examples are just <span className="font-bold">6 of the 1800+ reels</span> you'll get instant access to
+            <p className="text-md text-gray-600 max-w-2xl mx-auto">
+              Just <span className="font-bold">6 of 1800+ reels</span> you'll get instant access to
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reelVideos.map((video, index) => <ReelVideo key={index} videoUrl={video.url} title={video.title} />)}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <div className="max-w-md mx-auto bg-white rounded-xl p-5 shadow-lg border border-anime-purple/10 mb-6">
               <p className="text-lg font-medium text-gray-700 mb-4">
                 <span className="font-bold text-anime-purple">1794 more reels</span> waiting for you inside!
               </p>
-              <Button className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg w-full" onClick={redirectToPurchase}>
-                Get All 1800+ Reels - 80% OFF Today
+              {/* Large CTA button */}
+              <Button 
+                className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg font-bold w-full shadow-lg tracking-wide"
+                onClick={redirectToPurchase}
+              >
+                GET ALL REELS - 80% OFF TODAY
               </Button>
               <p className="text-sm text-gray-500 mt-3">Secure payment • Instant delivery • 30-day guarantee</p>
             </div>
@@ -248,17 +261,14 @@ const Index = () => {
       </section>
 
       {/* Testimonials - Social Proof */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 px-4 bg-gradient-to-b from-white to-anime-soft-purple/20">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Real Results From Real Creators</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how others are using these reels to transform their social media presence
-            </p>
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Real Results From Real Creators</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <div key={index} className="bg-white p-8 rounded-xl shadow border border-gray-100 hover:border-anime-purple/30 hover:shadow-lg transition-all">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => <div key={index} className="bg-white p-6 rounded-xl shadow border border-gray-100 hover:border-anime-purple/30 hover:shadow-lg transition-all">
                 <div className="flex mb-2">
                   {[1, 2, 3, 4, 5].map(star => <Star key={star} className="h-5 w-5 text-yellow-400" fill="currentColor" />)}
                 </div>
@@ -275,12 +285,6 @@ const Index = () => {
                 </div>
               </div>)}
           </div>
-          
-          <div className="text-center mt-10">
-            <Button className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg" onClick={redirectToPurchase}>
-              Join Them Now - 80% OFF Today
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -291,15 +295,19 @@ const Index = () => {
       <FAQSection />
 
       {/* Final CTA - FOMO & Urgency */}
-      <section className="py-20 px-4 bg-anime-purple text-white">
+      <section className="py-16 px-4 bg-anime-purple text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Don't Miss This Limited-Time Opportunity</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Don't Miss This Limited-Time Opportunity</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
             In just 30 seconds from now, you could be on your way to viral content and explosive growth!
           </p>
           <div className="max-w-md mx-auto">
-            <Button className="bg-white text-anime-purple hover:bg-gray-100 px-8 py-6 text-lg font-bold w-full animate-pulse-light" onClick={redirectToPurchase}>
-              Get 1800+ Reels Now - 80% OFF
+            {/* Final powerful CTA */}
+            <Button 
+              className="bg-white text-anime-purple hover:bg-gray-100 px-8 py-7 text-xl font-bold w-full shadow-lg animate-pulse-slow tracking-wide"
+              onClick={redirectToPurchase}
+            >
+              GET 1800+ REELS NOW - 80% OFF
             </Button>
             <p className="mt-4 text-sm opacity-80">Secure checkout • Instant access • 30-day money-back guarantee</p>
           </div>

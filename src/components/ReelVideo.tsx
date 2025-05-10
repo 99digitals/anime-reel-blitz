@@ -31,6 +31,14 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
         }
       });
     }
+
+    return () => {
+      if (videoRef.current) {
+        const video = videoRef.current;
+        video.removeEventListener('loadeddata', () => {});
+        video.removeEventListener('seeked', () => {});
+      }
+    };
   }, [playing]);
 
   const togglePlay = () => {
@@ -53,7 +61,7 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   };
 
   return (
-    <div className="video-card group relative w-full h-[560px] md:h-[500px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
+    <div className="video-card group relative w-full h-[400px] md:h-[450px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
       <video
         ref={videoRef}
         src={videoUrl}
@@ -65,20 +73,20 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
         poster={loaded ? undefined : `${videoUrl}#t=0.5`}
       />
       
-      <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-100 transition-opacity z-10">
+      <div className="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity z-10">
         {playing ? (
-          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110">
+          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
             <Pause className="text-white" size={40} />
           </div>
         ) : (
-          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110">
+          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
             <Play className="text-white ml-1" size={40} />
           </div>
         )}
       </div>
       
       <button 
-        className="absolute bottom-4 right-4 z-20 bg-anime-purple/80 rounded-full p-2 backdrop-blur-md text-white"
+        className="absolute bottom-4 right-4 z-20 bg-anime-purple/80 rounded-full p-2 backdrop-blur-md text-white shadow-md"
         onClick={toggleMute}
       >
         {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
