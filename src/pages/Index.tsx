@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 import { Footer } from '@/components/Footer';
 import { FAQSection } from '@/components/FAQSection';
