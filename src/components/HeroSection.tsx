@@ -2,6 +2,7 @@
 import { ArrowDown, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const userImages = [
   "https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740", 
@@ -16,18 +17,20 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionProps) => {
+  const isMobile = useIsMobile();
+  
   return (
-    <section className="pt-20 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
-      <div className="container mx-auto mt-10">
+    <section className="pt-8 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
+      <div className="container mx-auto mt-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-white drop-shadow-md">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">1800+ Anime Reels</span> That Will 
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"> 10x Your Following </span>
+              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">1800+ Anime Reels</span> That Will 
+              <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent"> 10x Your Following </span>
               In 30 Days
             </h1>
             
-            <p className="text-lg md:text-xl mb-6 text-purple-100 font-medium">
+            <p className="text-lg md:text-xl mb-6 text-purple-200 font-medium">
               Ready-to-post anime reels that <span className="font-black bg-purple-800 px-2 rounded">trigger the algorithm</span> and make your content go viral across all platforms
             </p>
 

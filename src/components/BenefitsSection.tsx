@@ -17,7 +17,7 @@ export const BenefitsSection = ({ redirectToPurchase }: BenefitsSectionProps) =>
   ];
 
   return (
-    <section className="py-12 px-4 bg-gradient-to-br from-purple-900 to-gray-900">
+    <section className="py-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
         <div className="bg-purple-900/40 backdrop-blur-sm p-6 rounded-xl shadow-xl border-2 border-purple-700/50 mb-8">
           <h2 className="text-2xl md:text-3xl font-black mb-6 text-center text-white">Why These Reels Convert</h2>
@@ -31,7 +31,7 @@ export const BenefitsSection = ({ redirectToPurchase }: BenefitsSectionProps) =>
           </ul>
           
           <Button 
-            className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 px-8 py-6 text-lg font-black w-full mt-8 shadow-xl animate-pulse-light tracking-wide border-2 border-white"
+            className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-8 py-6 text-lg font-black w-full mt-8 shadow-xl animate-pulse-light tracking-wide border-2 border-white"
             onClick={redirectToPurchase}
           >
             GET ALL 1800+ REELS NOW

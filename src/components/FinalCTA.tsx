@@ -7,7 +7,7 @@ interface FinalCTAProps {
 
 export const FinalCTA = ({ redirectToPurchase }: FinalCTAProps) => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-r from-purple-900 to-gray-900 text-white">
+    <section className="py-16 px-4 bg-gradient-to-r from-gray-900 via-purple-950 to-gray-900 text-white">
       <div className="container mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-black mb-6">Don't Miss This Limited-Time Opportunity</h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto text-purple-200 font-medium">
@@ -15,7 +15,7 @@ export const FinalCTA = ({ redirectToPurchase }: FinalCTAProps) => {
         </p>
         <div className="max-w-md mx-auto">
           <Button 
-            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600 px-8 py-7 text-xl font-black w-full shadow-xl animate-pulse-slow tracking-wide border-4 border-white"
+            className="bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 hover:from-yellow-600 hover:to-orange-600 px-8 py-7 text-xl font-black w-full shadow-xl animate-pulse-slow tracking-wide border-4 border-white"
             onClick={redirectToPurchase}
           >
             GET 1800+ REELS NOW - 80% OFF

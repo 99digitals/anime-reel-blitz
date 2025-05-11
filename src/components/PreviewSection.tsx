@@ -39,14 +39,14 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-            <span className="text-yellow-400">Preview The Content</span> Creating Viral Accounts
+            <span className="text-yellow-500">Preview The Content</span> Creating Viral Accounts
           </h2>
           <p className="text-md text-gray-300 max-w-2xl mx-auto">
             Just <span className="font-bold text-orange-400">6 of 1800+ reels</span> you'll get instant access to
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {reelVideos.map((video, index) => (
             <ReelVideo key={index} videoUrl={video.url} title={video.title} />
           ))}
@@ -58,7 +58,7 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
               <span className="font-bold text-orange-400">1794 more reels</span> waiting for you inside!
             </p>
             <Button 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-bold w-full shadow-lg tracking-wide"
+              className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-8 py-6 text-xl font-black w-full shadow-lg tracking-wide border-2 border-white"
               onClick={redirectToPurchase}
             >
               GET ALL REELS - 80% OFF TODAY
