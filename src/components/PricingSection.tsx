@@ -17,23 +17,23 @@ export const PricingSection = () => {
   };
   
   return (
-    <section className="py-12 px-4 md:py-16">
+    <section className="py-12 px-4 md:py-16 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-purple-gradient">Pricing That Makes Sense</h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 text-white">Pricing That Makes <span className="text-yellow-400">Sense</span></h2>
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
             Unlock the full power of anime for your social media presence at an unbeatable price
           </p>
         </div>
         
-        <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-xl border border-anime-purple/20">
-          <div className="bg-anime-purple text-white p-6 text-center">
+        <div className="max-w-md mx-auto bg-gray-800 rounded-xl overflow-hidden shadow-xl border border-purple-700/50">
+          <div className="bg-purple-900 text-white p-6 text-center">
             <h3 className="text-xl md:text-2xl font-bold">1800+ Anime Reels Bundle</h3>
             <div className="flex items-center justify-center mt-3 space-x-1">
               <span className="text-3xl md:text-4xl font-bold">₹199</span>
               <span className="text-base opacity-80">one-time</span>
             </div>
-            <p className="mt-2 text-anime-soft-purple/80 text-sm">
+            <p className="mt-2 text-purple-300 text-sm">
               <span className="line-through">₹999</span> Limited time offer!
             </p>
           </div>
@@ -43,19 +43,19 @@ export const PricingSection = () => {
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base">{feature}</span>
+                  <span className="text-sm md:text-base text-gray-200">{feature}</span>
                 </li>
               ))}
             </ul>
             
             <Button 
-              className="mt-6 w-full bg-anime-orange hover:bg-anime-orange/90 text-white font-bold py-4 rounded-lg text-base animate-pulse-light h-auto"
+              className="mt-6 w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 font-bold py-4 rounded-lg text-base animate-pulse-light h-auto border-2 border-white"
               onClick={handlePurchase}
             >
               Get Instant Access
             </Button>
             
-            <p className="text-center text-xs md:text-sm text-gray-500 mt-3">
+            <p className="text-center text-xs md:text-sm text-gray-400 mt-3">
               Secure checkout • Instant delivery • 30-day guarantee
             </p>
           </div>

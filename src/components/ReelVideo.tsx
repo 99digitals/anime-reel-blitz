@@ -9,7 +9,7 @@ interface ReelVideoProps {
 
 export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(false); // Changed to false for unmuted by default
+  const [muted, setMuted] = useState(false); // Unmuted by default
   const [loaded, setLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
@@ -61,7 +61,7 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   };
 
   return (
-    <div className="video-card group relative w-full h-[400px] md:h-[550px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
+    <div className="video-card group relative w-full h-[500px] md:h-[650px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
       <video
         ref={videoRef}
         src={videoUrl}

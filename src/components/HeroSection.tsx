@@ -20,12 +20,12 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
   const isMobile = useIsMobile();
   
   return (
-    <section className="pt-8 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
-      <div className="container mx-auto mt-4">
+    <section className="pt-12 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
+      <div className="container mx-auto mt-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-white drop-shadow-md">
-              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">1800+ Anime Reels</span> That Will 
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">1800+ Anime Reels</span> That Will 
               <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent"> 10x Your Following </span>
               In 30 Days
             </h1>
@@ -65,7 +65,7 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
             </Button>
           </div>
           
-          <div className="order-1 lg:order-2 mb-8 lg:mb-0 relative">
+          <div className="order-1 lg:order-2 mb-8 lg:mb-0 relative mt-8">
             <div className="bg-purple-900/30 backdrop-blur-sm p-3 rounded-3xl shadow-2xl max-w-md mx-auto border-2 border-purple-700/50">
               <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <img 

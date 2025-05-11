@@ -49,34 +49,34 @@ export const CountdownTimer = () => {
   const formatTime = (time: number) => time.toString().padStart(2, '0');
   
   return (
-    <section className="py-8 px-4 bg-gradient-to-r from-anime-purple/20 to-anime-pink/20">
+    <section className="py-8 px-4 bg-gradient-to-r from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto max-w-4xl text-center">
         <div className="inline-block px-4 py-1 bg-red-500 text-white rounded-full mb-4">
           <p className="text-sm font-medium">Limited Time Offer!</p>
         </div>
         
-        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5">
-          This <span className="bg-clip-text text-transparent bg-orange-gradient">80% Discount</span> Expires Soon!
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5 text-white">
+          This <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">80% Discount</span> Expires Soon!
         </h2>
         
         <div className="flex flex-col items-center mb-5">
-          <p className="text-base md:text-xl mb-3 text-gray-700">
+          <p className="text-base md:text-xl mb-3 text-gray-300">
             Price increases to <span className="line-through">₹999</span> in:
           </p>
           
           <div className="flex items-center justify-center space-x-3">
             <div className="relative">
-              <Clock className="absolute -top-5 text-anime-purple animate-bounce opacity-70 hidden md:block" size={20} />
+              <Clock className="absolute -top-5 text-purple-400 animate-bounce opacity-70 hidden md:block" size={20} />
               <div className="flex items-center space-x-2">
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-anime-purple text-white rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-xl md:text-3xl font-bold">{formatTime(hours)}</span>
                 </div>
-                <span className="text-xl md:text-3xl font-bold text-gray-700">:</span>
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-anime-purple text-white rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-xl md:text-3xl font-bold text-white">:</span>
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-xl md:text-3xl font-bold">{formatTime(minutes)}</span>
                 </div>
-                <span className="text-xl md:text-3xl font-bold text-gray-700">:</span>
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-anime-purple text-white rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden">
+                <span className="text-xl md:text-3xl font-bold text-white">:</span>
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden">
                   <span className="text-xl md:text-3xl font-bold relative z-10">{formatTime(seconds)}</span>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/20 h-[2px] animate-pulse"></div>
                 </div>
@@ -86,7 +86,7 @@ export const CountdownTimer = () => {
         </div>
         
         <button 
-          className="bg-anime-orange hover:bg-anime-orange/90 text-white px-4 md:px-8 py-3 text-sm md:text-base font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105 w-full md:w-auto md:min-w-[200px]"
+          className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-4 md:px-8 py-3 text-sm md:text-base font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105 w-full md:w-auto md:min-w-[200px] border-2 border-white"
           onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
         >
           Lock In 80% Off Now!

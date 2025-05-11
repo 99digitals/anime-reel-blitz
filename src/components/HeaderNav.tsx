@@ -8,7 +8,7 @@ interface HeaderNavProps {
 
 export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [spotsLeft] = useState(Math.floor(Math.random() * 5) + 3); // Generate once and never increase
+  const [spotsLeft, setSpotsLeft] = useState(7); // Start with fixed number
   const isMobile = useIsMobile();
   
   useEffect(() => {
@@ -16,7 +16,16 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Decrease spots over time but never increase
+    const spotsTimer = setInterval(() => {
+      setSpotsLeft(prev => Math.max(2, prev - 1)); // Never go below 2
+    }, 70000); // Every ~1 minute decrease by 1
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(spotsTimer);
+    };
   }, []);
   
   return (
@@ -30,7 +39,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       </div>
       
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className={`w-full ${isMobile ? 'h-14' : 'h-12'}`}></div>
+      <div className={`w-full ${isMobile ? 'h-20' : 'h-16'}`}></div> {/* Increased height */}
     </>
   );
 };

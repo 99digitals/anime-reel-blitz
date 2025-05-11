@@ -6,18 +6,18 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-anime-purple/10 py-16 mt-20">
+    <footer className="bg-gray-900 py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-anime-purple">1800+ Anime Reels by 99 Digitals</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold text-purple-400">1800+ Anime Reels by 99 Digitals</h3>
+            <p className="text-gray-300">
               Level up your social media game with our premium anime reels bundle.
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-anime-purple">Connect With Us</h4>
+            <h4 className="text-lg font-semibold mb-4 text-purple-400">Connect With Us</h4>
             <div className="flex space-x-4">
               <a 
                 href="https://api.whatsapp.com/send?phone=919103395556" 
@@ -47,7 +47,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-10 pt-6 border-t border-gray-200 text-center text-gray-500">
+        <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400">
           <p>© {currentYear} 99 Digitals. All rights reserved.</p>
         </div>
       </div>

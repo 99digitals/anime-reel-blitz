@@ -35,11 +35,11 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
   ];
 
   return (
-    <section id="preview-section" className="py-12 px-4 bg-gray-900">
+    <section id="preview-section" className="py-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-            <span className="text-yellow-500">Preview The Content</span> Creating Viral Accounts
+            <span className="text-yellow-400">Preview The Content</span> Creating Viral Accounts
           </h2>
           <p className="text-md text-gray-300 max-w-2xl mx-auto">
             Just <span className="font-bold text-orange-400">6 of 1800+ reels</span> you'll get instant access to
@@ -53,12 +53,12 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
         </div>
         
         <div className="text-center mt-10">
-          <div className="max-w-md mx-auto bg-gray-800 rounded-xl p-5 shadow-lg border border-gray-700 mb-6">
+          <div className="max-w-md mx-auto bg-gray-800/80 backdrop-blur-sm rounded-xl p-5 shadow-lg border border-purple-700/50 mb-6">
             <p className="text-lg font-medium text-gray-200 mb-4">
               <span className="font-bold text-orange-400">1794 more reels</span> waiting for you inside!
             </p>
             <Button 
-              className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-8 py-6 text-xl font-black w-full shadow-lg tracking-wide border-2 border-white"
+              className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-8 py-6 text-xl font-black w-full shadow-lg tracking-wide border-2 border-white animate-pulse-slow"
               onClick={redirectToPurchase}
             >
               GET ALL REELS - 80% OFF TODAY
