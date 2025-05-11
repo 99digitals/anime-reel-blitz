@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 
 interface HeaderNavProps {
   redirectToPurchase: () => void;
@@ -18,17 +17,14 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
   }, []);
   
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-lg py-2' : 'bg-gray-900/90 py-4'}`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="text-xl font-bold text-white">Anime Reels Bundle</div>
-        
-        <Button 
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6" 
-          onClick={redirectToPurchase}
-        >
-          Get 80% OFF Today
-        </Button>
+    <>
+      {/* Bold FOMO strip */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 py-3 text-center px-4">
+        <p className="text-white font-extrabold text-sm md:text-base animate-pulse">
+          <span className="bg-yellow-400 text-purple-900 px-2 py-0.5 rounded mr-2">LIMITED OFFER</span>
+          <span>80% OFF ENDS TODAY! Only {Math.floor(Math.random() * 8) + 3} spots left</span>
+        </p>
       </div>
-    </nav>
+    </>
   );
 };
