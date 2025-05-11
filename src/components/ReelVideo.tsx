@@ -9,7 +9,7 @@ interface ReelVideoProps {
 
 export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false); // Changed to false for unmuted by default
   const [loaded, setLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
@@ -61,7 +61,7 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
   };
 
   return (
-    <div className="video-card group relative w-full h-[350px] md:h-[450px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
+    <div className="video-card group relative w-full h-[400px] md:h-[550px] bg-black rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300" onClick={togglePlay}>
       <video
         ref={videoRef}
         src={videoUrl}
@@ -75,18 +75,18 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
       
       <div className="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity z-10">
         {playing ? (
-          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
+          <div className="bg-gray-900/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
             <Pause className="text-white" size={32} />
           </div>
         ) : (
-          <div className="bg-anime-purple/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
+          <div className="bg-gray-900/80 rounded-full p-3 backdrop-blur-md transform transition-all duration-300 hover:scale-110 shadow-lg">
             <Play className="text-white ml-1" size={32} />
           </div>
         )}
       </div>
       
       <button 
-        className="absolute bottom-4 right-4 z-20 bg-anime-purple/80 rounded-full p-2 backdrop-blur-md text-white shadow-md"
+        className="absolute bottom-4 right-4 z-20 bg-gray-900/80 rounded-full p-2 backdrop-blur-md text-white shadow-md"
         onClick={toggleMute}
       >
         {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
@@ -98,9 +98,9 @@ export const ReelVideo = ({ videoUrl, title }: ReelVideoProps) => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
       
-      {/* Anime-themed decorative elements */}
-      <div className="absolute top-2 right-2 w-8 h-8 md:w-12 md:h-12 border-t-2 border-r-2 border-anime-pink opacity-40"></div>
-      <div className="absolute bottom-2 left-2 w-8 h-8 md:w-12 md:h-12 border-b-2 border-l-2 border-anime-pink opacity-40"></div>
+      {/* Decorative elements */}
+      <div className="absolute top-2 right-2 w-8 h-8 md:w-12 md:h-12 border-t-2 border-r-2 border-orange-500 opacity-40"></div>
+      <div className="absolute bottom-2 left-2 w-8 h-8 md:w-12 md:h-12 border-b-2 border-l-2 border-orange-500 opacity-40"></div>
     </div>
   );
 };

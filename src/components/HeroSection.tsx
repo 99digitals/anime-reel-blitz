@@ -17,22 +17,22 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionProps) => {
   return (
-    <section className="pt-32 pb-12 px-4 bg-gradient-to-br from-purple-600 via-purple-500 to-fuchsia-500">
+    <section className="pt-36 pb-12 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            <div className="inline-block px-3 py-1 bg-yellow-400 text-purple-800 rounded-full text-sm font-bold mb-3 shadow-lg">
+            <div className="inline-block px-3 py-1 bg-yellow-500 text-gray-900 rounded-full text-sm font-bold mb-3 shadow-lg">
               Limited Time Offer - 80% OFF
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-white drop-shadow-md">
-              <span className="text-yellow-300">1800+ Anime Reels</span> That Will 
-              <span className="text-orange-400"> 10x Your Following </span>
+              <span className="text-yellow-400">1800+ Anime Reels</span> That Will 
+              <span className="text-orange-500"> 10x Your Following </span>
               In 30 Days
             </h1>
             
             <p className="text-lg md:text-xl mb-6 text-white font-medium">
-              Ready-to-post anime reels that <span className="font-black bg-purple-700 px-2 rounded">trigger the algorithm</span> and make your content go viral across all platforms
+              Ready-to-post anime reels that <span className="font-black bg-gray-800 px-2 rounded">trigger the algorithm</span> and make your content go viral across all platforms
             </p>
 
             <Button 
@@ -45,21 +45,21 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
             <div className="mt-4 flex items-center justify-center lg:justify-start">
               <div className="flex -space-x-2">
                 {userImages.map((image, i) => (
-                  <Avatar key={i} className="border-2 border-yellow-300 w-8 h-8">
+                  <Avatar key={i} className="border-2 border-yellow-400 w-8 h-8">
                     <AvatarImage src={image} alt={`User ${i + 1}`} />
                     <AvatarFallback>{i + 1}</AvatarFallback>
                   </Avatar>
                 ))}
               </div>
               <div className="ml-3 text-sm">
-                <span className="text-yellow-300 font-bold">4.9/5</span> 
+                <span className="text-yellow-400 font-bold">4.9/5</span> 
                 <span className="text-white ml-1">from 2000+ creators</span>
               </div>
             </div>
             
             <Button 
               variant="ghost" 
-              className="mt-6 text-white flex items-center mx-auto lg:mx-0 gap-1 hover:bg-purple-700/50" 
+              className="mt-6 text-white flex items-center mx-auto lg:mx-0 gap-1 hover:bg-gray-800/50" 
               onClick={scrollToReels}
             >
               See examples <ArrowDown className="h-4 w-4" />
@@ -67,7 +67,7 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
           </div>
           
           <div className="order-1 lg:order-2 mb-8 lg:mb-0 relative">
-            <div className="bg-white/10 backdrop-blur-sm p-3 rounded-3xl shadow-2xl max-w-md mx-auto border-2 border-white/30">
+            <div className="bg-gray-800/30 backdrop-blur-sm p-3 rounded-3xl shadow-2xl max-w-md mx-auto border-2 border-gray-700/50">
               <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <img 
                   alt="1800 Anime Reels Bundle" 
@@ -80,13 +80,13 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
               </div>
             </div>
             
-            <div className="absolute -top-10 -right-10 bg-red-500 text-white font-black py-2 px-4 rounded-full rotate-12 animate-pulse-light shadow-lg border-2 border-white">
+            <div className="absolute -top-10 -right-10 bg-red-600 text-white font-black py-2 px-4 rounded-full rotate-12 animate-pulse-light shadow-lg border-2 border-white">
               ₹199 Today Only!
             </div>
             
-            <div className="absolute -bottom-5 -left-5 bg-purple-700 text-white text-sm font-bold py-2 px-4 rounded-full animate-float shadow-lg border-2 border-yellow-300">
+            <div className="absolute -bottom-5 -left-5 bg-gray-800 text-white text-sm font-bold py-2 px-4 rounded-full animate-float shadow-lg border-2 border-yellow-400">
               <div className="flex items-center">
-                <Star className="h-4 w-4 mr-1 text-yellow-300" fill="currentColor" />
+                <Star className="h-4 w-4 mr-1 text-yellow-400" fill="currentColor" />
                 <span>Best Seller</span>
               </div>
             </div>

@@ -35,14 +35,14 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
   ];
 
   return (
-    <section id="preview-section" className="py-12 px-4 bg-white">
+    <section id="preview-section" className="py-12 px-4 bg-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-purple-gradient">Preview The Content</span> Creating Viral Accounts
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <span className="text-yellow-400">Preview The Content</span> Creating Viral Accounts
           </h2>
-          <p className="text-md text-gray-600 max-w-2xl mx-auto">
-            Just <span className="font-bold">6 of 1800+ reels</span> you'll get instant access to
+          <p className="text-md text-gray-300 max-w-2xl mx-auto">
+            Just <span className="font-bold text-orange-400">6 of 1800+ reels</span> you'll get instant access to
           </p>
         </div>
         
@@ -53,17 +53,17 @@ export const PreviewSection = ({ redirectToPurchase }: PreviewSectionProps) => {
         </div>
         
         <div className="text-center mt-10">
-          <div className="max-w-md mx-auto bg-white rounded-xl p-5 shadow-lg border border-anime-purple/10 mb-6">
-            <p className="text-lg font-medium text-gray-700 mb-4">
-              <span className="font-bold text-anime-purple">1794 more reels</span> waiting for you inside!
+          <div className="max-w-md mx-auto bg-gray-800 rounded-xl p-5 shadow-lg border border-gray-700 mb-6">
+            <p className="text-lg font-medium text-gray-200 mb-4">
+              <span className="font-bold text-orange-400">1794 more reels</span> waiting for you inside!
             </p>
             <Button 
-              className="bg-anime-orange hover:bg-anime-orange/90 text-white px-8 py-6 text-lg font-bold w-full shadow-lg tracking-wide"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-bold w-full shadow-lg tracking-wide"
               onClick={redirectToPurchase}
             >
               GET ALL REELS - 80% OFF TODAY
             </Button>
-            <p className="text-sm text-gray-500 mt-3">Secure payment • Instant delivery • 30-day guarantee</p>
+            <p className="text-sm text-gray-400 mt-3">Secure payment • Instant delivery • 30-day guarantee</p>
           </div>
         </div>
       </div>

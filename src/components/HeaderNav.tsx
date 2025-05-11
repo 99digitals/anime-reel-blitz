@@ -18,12 +18,12 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
   }, []);
   
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-anime-purple shadow-md py-2' : 'bg-anime-dark-purple/90 py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-lg py-2' : 'bg-gray-900/90 py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="text-xl font-bold text-white">Anime Reels Bundle</div>
         
         <Button 
-          className="bg-anime-orange hover:bg-orange-600 text-white font-bold" 
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6" 
           onClick={redirectToPurchase}
         >
           Get 80% OFF Today

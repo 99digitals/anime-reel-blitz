@@ -17,15 +17,15 @@ export const BenefitsSection = ({ redirectToPurchase }: BenefitsSectionProps) =>
   ];
 
   return (
-    <section className="py-12 px-4 bg-gradient-to-br from-purple-100 to-fuchsia-100">
+    <section className="py-12 px-4 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="container mx-auto">
-        <div className="bg-white p-6 rounded-xl shadow-xl border-2 border-purple-300 mb-8">
-          <h2 className="text-2xl md:text-3xl font-black mb-6 text-center text-purple-800">Why These Reels Convert</h2>
+        <div className="bg-gray-900 p-6 rounded-xl shadow-xl border-2 border-gray-700 mb-8">
+          <h2 className="text-2xl md:text-3xl font-black mb-6 text-center text-white">Why These Reels Convert</h2>
           <ul className="space-y-4">
             {benefits.map((benefit, index) => (
               <li key={index} className="flex items-start">
-                <CheckCircle className="mr-2 h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-gray-800 font-semibold">{benefit}</span>
+                <CheckCircle className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                <span className="text-gray-200 font-semibold">{benefit}</span>
               </li>
             ))}
           </ul>
@@ -36,7 +36,7 @@ export const BenefitsSection = ({ redirectToPurchase }: BenefitsSectionProps) =>
           >
             GET ALL 1800+ REELS NOW
           </Button>
-          <p className="text-center text-sm text-gray-700 mt-3 font-medium">
+          <p className="text-center text-sm text-gray-300 mt-3 font-medium">
             Secure payment • Instant delivery • 30-day guarantee
           </p>
         </div>
