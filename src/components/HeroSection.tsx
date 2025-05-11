@@ -20,8 +20,8 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
   const isMobile = useIsMobile();
   
   return (
-    <section className="pt-12 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
-      <div className="container mx-auto mt-6">
+    <section className="pt-8 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-white drop-shadow-md">

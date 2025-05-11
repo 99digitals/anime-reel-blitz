@@ -25,36 +25,47 @@ export const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-12 px-4 bg-gradient-to-b from-white to-anime-soft-purple/20">
+    <section className="py-12 px-4 bg-gradient-to-b from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Real Results From Real Creators</h2>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1 bg-purple-900/50 text-purple-300 rounded-full mb-4 border border-purple-700/30 text-sm font-medium">SOCIAL PROOF</span>
+          <h2 className="text-2xl md:text-4xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-100">See How Creators Like You Got Results</h2>
+          <p className="text-purple-300 max-w-2xl mx-auto">Join thousands of satisfied creators who transformed their social media presence</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-xl shadow border border-gray-100 hover:border-anime-purple/30 hover:shadow-lg transition-all"
+              className="bg-gradient-to-b from-purple-900/60 to-purple-900/30 p-6 rounded-xl shadow-2xl border border-purple-700/30 hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all transform hover:-translate-y-1"
             >
               <div className="flex mb-2">
                 {[1, 2, 3, 4, 5].map(star => (
                   <Star key={star} className="h-5 w-5 text-yellow-400" fill="currentColor" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+              <p className="text-purple-200 mb-6 italic font-medium">"{testimonial.text}"</p>
               <div className="flex items-center">
-                <Avatar className="h-10 w-10 mr-3">
+                <Avatar className="h-12 w-12 mr-3 border-2 border-purple-500/30">
                   <AvatarImage src={testimonial.image} alt={testimonial.name} />
                   <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.position}</p>
+                  <p className="font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-sm text-purple-300">{testimonial.position}</p>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-10 text-center">
+          <button 
+            className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-8 py-4 text-lg font-black rounded-lg shadow-xl transform transition-transform hover:scale-105 border-2 border-white"
+            onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
+          >
+            GET 80% OFF NOW - ONLY ₹199
+          </button>
         </div>
       </div>
     </section>

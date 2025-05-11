@@ -39,7 +39,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       </div>
       
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className={`w-full ${isMobile ? 'h-20' : 'h-16'}`}></div> {/* Increased height */}
+      <div className={`w-full ${isMobile ? 'h-28' : 'h-20'}`}></div> {/* Increased height for better spacing */}
     </>
   );
 };

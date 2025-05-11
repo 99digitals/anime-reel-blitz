@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Clock } from 'lucide-react';
+import { Clock, Star } from 'lucide-react';
 
 export const CountdownTimer = () => {
   // Starting time in seconds (5 hours 36 minutes = 20160 seconds)
@@ -49,13 +49,13 @@ export const CountdownTimer = () => {
   const formatTime = (time: number) => time.toString().padStart(2, '0');
   
   return (
-    <section className="py-8 px-4 bg-gradient-to-r from-gray-900 via-purple-950 to-gray-900">
+    <section className="py-8 px-4 bg-gradient-to-r from-gray-900 via-purple-950 to-gray-900 border-t-2 border-purple-700/30">
       <div className="container mx-auto max-w-4xl text-center">
-        <div className="inline-block px-4 py-1 bg-red-500 text-white rounded-full mb-4">
-          <p className="text-sm font-medium">Limited Time Offer!</p>
+        <div className="inline-block px-4 py-1 bg-red-600 text-white rounded-full mb-4 shadow-lg animate-pulse-slow">
+          <p className="text-sm font-bold">⏰ Limited Time Offer!</p>
         </div>
         
-        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5 text-white">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-5 text-white">
           This <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">80% Discount</span> Expires Soon!
         </h2>
         
@@ -68,15 +68,15 @@ export const CountdownTimer = () => {
             <div className="relative">
               <Clock className="absolute -top-5 text-purple-400 animate-bounce opacity-70 hidden md:block" size={20} />
               <div className="flex items-center space-x-2">
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg border border-purple-600">
                   <span className="text-xl md:text-3xl font-bold">{formatTime(hours)}</span>
                 </div>
                 <span className="text-xl md:text-3xl font-bold text-white">:</span>
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg border border-purple-600">
                   <span className="text-xl md:text-3xl font-bold">{formatTime(minutes)}</span>
                 </div>
                 <span className="text-xl md:text-3xl font-bold text-white">:</span>
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-purple-800 text-white rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden border border-purple-600">
                   <span className="text-xl md:text-3xl font-bold relative z-10">{formatTime(seconds)}</span>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/20 h-[2px] animate-pulse"></div>
                 </div>
@@ -86,11 +86,18 @@ export const CountdownTimer = () => {
         </div>
         
         <button 
-          className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-4 md:px-8 py-3 text-sm md:text-base font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105 w-full md:w-auto md:min-w-[200px] border-2 border-white"
+          className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-4 md:px-8 py-3 text-sm md:text-base font-black rounded-lg shadow-2xl transform transition-transform hover:scale-105 w-full md:w-auto md:min-w-[200px] border-2 border-white"
           onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
         >
-          Lock In 80% Off Now!
+          LOCK IN 80% OFF NOW!
         </button>
+
+        <div className="mt-4 text-white/70 text-sm flex items-center justify-center">
+          <div className="flex items-center">
+            <Star className="h-4 w-4 mr-1 text-yellow-400" fill="currentColor" />
+            <span>Trusted by 2000+ creators across India</span>
+          </div>
+        </div>
       </div>
     </section>
   );

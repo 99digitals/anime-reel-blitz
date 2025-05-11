@@ -11,6 +11,7 @@ import { FeaturesSection } from '@/components/FeaturesSection';
 import { PreviewSection } from '@/components/PreviewSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { FinalCTA } from '@/components/FinalCTA';
+import { SocialProofNotifications } from '@/components/SocialProofNotifications';
 
 const Index = () => {
   const redirectToPurchase = () => {
@@ -57,6 +58,9 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
+      
+      {/* Social Proof Notifications */}
+      <SocialProofNotifications />
       
       {/* WhatsApp Widget */}
       <WhatsAppWidget phoneNumber="919103395556" />
