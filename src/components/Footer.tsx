@@ -6,9 +6,9 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 py-16 border-t border-purple-900/30">
+    <footer className="bg-gray-900 py-12 border-t border-purple-900/30">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">1800+ Anime Reels by 99 Digitals</h3>
             <p className="text-gray-300">
@@ -47,7 +47,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-10 pt-6 border-t border-gray-800 text-center">
+        <div className="mt-8 pt-4 border-t border-gray-800 text-center">
           <p className="text-gray-400">© {currentYear} 99 Digitals. All rights reserved.</p>
           <div className="flex justify-center mt-2 space-x-4 text-sm">
             <Link to="/terms" className="text-gray-500 hover:text-purple-400">Terms</Link>

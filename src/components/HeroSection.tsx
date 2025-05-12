@@ -20,7 +20,7 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
   const isMobile = useIsMobile();
   
   return (
-    <section className="pt-8 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
+    <section className="pt-14 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
@@ -38,7 +38,7 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
               className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-6 py-6 text-lg md:text-xl w-full lg:w-auto font-black tracking-wide shadow-xl animate-pulse-slow mb-4 border-2 border-white"
               onClick={redirectToPurchase}
             >
-              GET 80% OFF NOW - ONLY ₹199
+              YES! I WANT 1800+ REELS - ONLY ₹199
             </Button>
 
             <div className="mt-4 flex items-center justify-center lg:justify-start">
@@ -65,7 +65,7 @@ export const HeroSection = ({ redirectToPurchase, scrollToReels }: HeroSectionPr
             </Button>
           </div>
           
-          <div className="order-1 lg:order-2 mb-8 lg:mb-0 relative mt-8">
+          <div className="order-1 lg:order-2 mb-8 lg:mb-0 relative mt-3">
             <div className="bg-purple-900/30 backdrop-blur-sm p-3 rounded-3xl shadow-2xl max-w-md mx-auto border-2 border-purple-700/50">
               <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <img 

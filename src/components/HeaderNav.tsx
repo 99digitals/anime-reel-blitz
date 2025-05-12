@@ -30,7 +30,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
         localStorage.setItem('spotsLeft', newValue.toString());
         return newValue;
       });
-    }, 70000); // Every ~1 minute decrease by 1
+    }, 70000); // Every ~1.2 minutes decrease by 1
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -41,7 +41,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
   return (
     <>
       {/* Bold FOMO strip */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 py-3 text-center px-4">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 py-2 text-center px-4">
         <p className="text-white font-extrabold text-sm md:text-base animate-pulse">
           <span className="bg-yellow-500 text-gray-900 px-2 py-0.5 rounded mr-2">LIMITED OFFER</span>
           <span>80% OFF ENDS TODAY! Only {spotsLeft} spots left</span>
@@ -49,7 +49,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       </div>
       
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className={`w-full ${isMobile ? 'h-32' : 'h-20'} bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900`}></div>
+      <div className="h-10 bg-transparent"></div>
     </>
   );
 };

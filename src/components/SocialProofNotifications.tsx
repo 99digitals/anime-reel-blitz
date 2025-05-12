@@ -104,13 +104,13 @@ export const SocialProofNotifications = () => {
       // Show the new notification
       setIsVisible(true);
       
-      // Auto hide after 3 seconds
+      // Auto hide after 5 seconds
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
       timeoutRef.current = setTimeout(() => {
         setIsVisible(false);
-      }, 3000);
+      }, 5000);
       
     }, 500);
   };
@@ -125,14 +125,14 @@ export const SocialProofNotifications = () => {
       });
       setIsVisible(true);
       
-      // Auto hide after 3 seconds
+      // Auto hide after 5 seconds
       timeoutRef.current = setTimeout(() => {
         setIsVisible(false);
-      }, 3000);
+      }, 5000);
     }, 3000);
     
     // Set up interval for showing notifications
-    const interval = setInterval(showNextNotification, 9000);
+    const interval = setInterval(showNextNotification, 12000);
     
     return () => {
       clearTimeout(firstTimeout);
@@ -154,30 +154,36 @@ export const SocialProofNotifications = () => {
   
   return (
     <div 
-      className={`fixed bottom-24 left-6 z-40 max-w-[220px] transition-all duration-500 ${
+      className={`fixed bottom-6 left-6 z-40 max-w-[300px] transition-all duration-500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
-      <div className="bg-black/90 backdrop-blur-sm rounded-lg shadow-md p-3 border border-purple-800/50 flex flex-col">
+      <div className="bg-white rounded-lg shadow-lg p-4 flex items-center">
+        <div className="h-12 w-12 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+          <span className="text-white text-xl font-bold">{currentPurchase.name.charAt(0)}</span>
+        </div>
+        
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-medium text-gray-900 truncate">
+            {currentPurchase.name} from {currentPurchase.location}
+          </p>
+          <p className="text-xs text-gray-700">
+            purchased the anime reels bundle
+          </p>
+          <p className="text-xs text-gray-500">{currentPurchase.timeAgo}</p>
+          
+          <div className="mt-1 flex items-center">
+            <ShieldCheck size={14} className="text-green-500 mr-1" />
+            <span className="text-[10px] text-green-600 font-medium">verified by Proof</span>
+          </div>
+        </div>
+        
         <button 
           onClick={handleDismiss}
-          className="text-gray-400 hover:text-gray-200 self-end -mt-1 -mr-1 mb-1"
+          className="text-gray-400 hover:text-gray-600 -mt-6 -mr-2 h-6 w-6 flex items-center justify-center"
         >
           ✕
         </button>
-        
-        <div className="flex-1 min-w-0">
-          <p className="text-xs font-medium truncate">
-            <span className="font-semibold text-purple-300">{currentPurchase.name}</span> from <span className="text-gray-300">{currentPurchase.location}</span>
-          </p>
-          <p className="text-xs font-medium truncate text-white mb-0.5">purchased the bundle</p>
-          <p className="text-[10px] text-gray-400">{currentPurchase.timeAgo}</p>
-          
-          <div className="mt-2 pt-1 border-t border-purple-800/30 flex items-center justify-center">
-            <ShieldCheck size={12} className="text-green-500 mr-1" />
-            <span className="text-[10px] text-green-400 font-medium">Verified by Proof</span>
-          </div>
-        </div>
       </div>
     </div>
   );
