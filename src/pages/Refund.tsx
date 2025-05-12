@@ -1,16 +1,12 @@
-
 import { Footer } from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { HeaderNav } from '@/components/HeaderNav';
 import { ShieldCheck, MessageCircle } from 'lucide-react';
-
 const Refund = () => {
   const redirectToPurchase = () => {
     window.open("https://rzp.io/rzp/L0POQliw", "_blank");
   };
-
-  return (
-    <div className="min-h-screen bg-gray-900 text-white">
+  return <div className="min-h-screen bg-gray-900 text-white">
       <HeaderNav redirectToPurchase={redirectToPurchase} />
       
       <div className="container mx-auto px-4 py-16">
@@ -43,7 +39,7 @@ const Refund = () => {
               <li>The product was not delivered to you after purchase</li>
               <li>The product does not match the description provided</li>
               <li>Technical issues prevent you from accessing or using the product</li>
-              <li>Duplicate purchase or accidental purchase</li>
+              <li>Duplicate purchase by accident</li>
             </ul>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">3. Refund Process</h2>
@@ -65,12 +61,7 @@ const Refund = () => {
                 Still have questions? We're here to help!
               </p>
               <p className="text-center mt-2">
-                <a 
-                  href="https://api.whatsapp.com/send?phone=919103395556" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-green-400 hover:text-green-300 font-medium"
-                >
+                <a href="https://api.whatsapp.com/send?phone=919103395556" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-green-400 hover:text-green-300 font-medium">
                   <MessageCircle className="h-4 w-4 mr-1" /> Contact on WhatsApp
                 </a>
               </p>
@@ -86,8 +77,6 @@ const Refund = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Refund;
