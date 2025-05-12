@@ -1,10 +1,7 @@
-
 import { Footer } from '@/components/Footer';
 import { Link } from 'react-router-dom';
-
 const Privacy = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Privacy Policy</h1>
         
@@ -12,10 +9,7 @@ const Privacy = () => {
           <p className="mb-4">Last updated: May 2, 2025</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
-          <p>
-            WorkLinc ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains 
-            how we collect, use, and share information about you when you purchase our 1800 Anime Reels Bundle.
-          </p>
+          <p>99Digitals (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you purchase our 1800 Anime Reels Bundle.</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">2. Information We Collect</h2>
           <p>
@@ -45,8 +39,6 @@ const Privacy = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Privacy;
