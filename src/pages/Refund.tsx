@@ -47,7 +47,7 @@ const Refund = () => {
             <ul className="list-disc ml-8 my-4 space-y-2">
               <li>Our team will review your request within 2-3 business days</li>
               <li>If approved, your refund will be processed to the original payment method</li>
-              <li>Refunds may take 5-10 business days to appear in your account, depending on your payment provider</li>
+              <li>Refunds may take 3-5 business days to appear in your account, depending on your payment provider</li>
             </ul>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">4. Contact Us</h2>
