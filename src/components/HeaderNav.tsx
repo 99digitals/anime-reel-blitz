@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ShieldCheck } from 'lucide-react';
 
 interface HeaderNavProps {
   redirectToPurchase: () => void;
@@ -8,7 +9,12 @@ interface HeaderNavProps {
 
 export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [spotsLeft, setSpotsLeft] = useState(7); // Start with fixed number
+  const [spotsLeft, setSpotsLeft] = useState(() => {
+    // Use local storage to ensure count starts at 16 for new users
+    // and persists for returning users
+    const storedSpots = localStorage.getItem('spotsLeft');
+    return storedSpots ? parseInt(storedSpots) : 16;
+  });
   const isMobile = useIsMobile();
   
   useEffect(() => {
@@ -17,9 +23,13 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
     };
     window.addEventListener('scroll', handleScroll);
     
-    // Decrease spots over time but never increase
+    // Decrease spots over time but never increase or go below 2
     const spotsTimer = setInterval(() => {
-      setSpotsLeft(prev => Math.max(2, prev - 1)); // Never go below 2
+      setSpotsLeft(prev => {
+        const newValue = Math.max(2, prev - 1);
+        localStorage.setItem('spotsLeft', newValue.toString());
+        return newValue;
+      });
     }, 70000); // Every ~1 minute decrease by 1
     
     return () => {
@@ -39,7 +49,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       </div>
       
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className={`w-full ${isMobile ? 'h-28' : 'h-20'}`}></div> {/* Increased height for better spacing */}
+      <div className={`w-full ${isMobile ? 'h-32' : 'h-20'} bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900`}></div>
     </>
   );
 };

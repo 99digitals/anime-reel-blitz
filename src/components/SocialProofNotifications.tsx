@@ -1,13 +1,11 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { X } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 interface Purchase {
   name: string;
   location: string;
   timeAgo: string;
-  image: string;
 }
 
 export const SocialProofNotifications = () => {
@@ -17,69 +15,73 @@ export const SocialProofNotifications = () => {
   const [dismissed, setDismissed] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
-  // List of Indian names and cities for randomization
-  const purchases: Purchase[] = [
-    { 
-      name: "Priya Sharma", 
-      location: "Mumbai", 
-      timeAgo: "2 minutes ago", 
-      image: "https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740" 
-    },
-    { 
-      name: "Rajesh Kumar", 
-      location: "Delhi", 
-      timeAgo: "5 minutes ago", 
-      image: "https://img.freepik.com/free-photo/young-man-thinking-with-pensive-expression-ai-generated_1194-588529.jpg?t=st=1746212759~exp=1746216359~hmac=99b380c7a03f66e68f9a0952aaf53596cf5b4903386cc4fc24f2004235460fa8&w=826" 
-    },
-    { 
-      name: "Ananya Patel", 
-      location: "Bangalore", 
-      timeAgo: "1 minute ago", 
-      image: "https://img.freepik.com/free-photo/fashionable-young-woman-standing-front-blue-backdrop_23-2148204718.jpg?t=st=1746212760~exp=1746216360~hmac=b01d8d29b0ab2538a8adfa39c37a644b3f2d25a00b75f0ec89fcf97bd90b1795&w=826" 
-    },
-    { 
-      name: "Vikram Singh", 
-      location: "Hyderabad", 
-      timeAgo: "3 minutes ago", 
-      image: "https://img.freepik.com/free-photo/photorealistic-lawyer-day-celebration_23-2151053984.jpg?t=st=1746212763~exp=1746216363~hmac=27235254b1ad4b87df97dfa17407c944c873efebd5e991cf98daae0027952b58&w=826" 
-    },
-    { 
-      name: "Divya Reddy", 
-      location: "Chennai", 
-      timeAgo: "Just now", 
-      image: "https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740" 
-    },
-    { 
-      name: "Arjun Mehta", 
-      location: "Kolkata", 
-      timeAgo: "4 minutes ago", 
-      image: "https://img.freepik.com/free-photo/young-man-thinking-with-pensive-expression-ai-generated_1194-588529.jpg?t=st=1746212759~exp=1746216359~hmac=99b380c7a03f66e68f9a0952aaf53596cf5b4903386cc4fc24f2004235460fa8&w=826" 
-    },
-    { 
-      name: "Pooja Gupta", 
-      location: "Pune", 
-      timeAgo: "7 minutes ago", 
-      image: "https://img.freepik.com/free-photo/fashionable-young-woman-standing-front-blue-backdrop_23-2148204718.jpg?t=st=1746212760~exp=1746216360~hmac=b01d8d29b0ab2538a8adfa39c37a644b3f2d25a00b75f0ec89fcf97bd90b1795&w=826" 
-    },
-    { 
-      name: "Sanjay Verma", 
-      location: "Jaipur", 
-      timeAgo: "2 minutes ago", 
-      image: "https://img.freepik.com/free-photo/photorealistic-lawyer-day-celebration_23-2151053984.jpg?t=st=1746212763~exp=1746216363~hmac=27235254b1ad4b87df97dfa17407c944c873efebd5e991cf98daae0027952b58&w=826" 
-    },
-    { 
-      name: "Meera Iyer", 
-      location: "Ahmedabad", 
-      timeAgo: "Just now", 
-      image: "https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740" 
-    },
-    { 
-      name: "Ravi Kapoor", 
-      location: "Lucknow", 
-      timeAgo: "5 minutes ago", 
-      image: "https://img.freepik.com/free-photo/young-man-thinking-with-pensive-expression-ai-generated_1194-588529.jpg?t=st=1746212759~exp=1746216359~hmac=99b380c7a03f66e68f9a0952aaf53596cf5b4903386cc4fc24f2004235460fa8&w=826" 
-    }
+  // List of 100 Indian names for randomization
+  const indianNames: string[] = [
+    "Aanya Sharma", "Aarav Patel", "Aditi Singh", "Advait Kumar", "Aisha Khan", 
+    "Akshay Reddy", "Alisha Gupta", "Ananya Desai", "Aniket Joshi", "Anushka Malhotra",
+    "Arjun Mehta", "Avani Iyer", "Ayush Verma", "Chaaya Roy", "Darsh Shah",
+    "Devansh Kapoor", "Diya Mishra", "Divya Agarwal", "Ehsaan Ahmed", "Eshana Nair",
+    "Farhan Qureshi", "Gagan Choudhary", "Gaurav Bansal", "Gitanjali Das", "Harini Venkatesh",
+    "Harsh Saxena", "Ishita Bhatia", "Ishaan Sharma", "Janhvi Pandit", "Jai Mehra",
+    "Kabir Khanna", "Kavya Rao", "Kiara Bose", "Kunal Tiwari", "Lakshya Narang",
+    "Mahika Chawla", "Manav Malhotra", "Medha Kulkarni", "Mira Singh", "Naksh Arora",
+    "Navya Chopra", "Neelam Yadav", "Niharika Menon", "Ojas Bhatt", "Pari Chatterjee",
+    "Pranav Sood", "Prisha Sen", "Rahul Chhabra", "Rajat Malik", "Riya Garg",
+    "Rohan Bajaj", "Saanvi Khurana", "Sahil Thakur", "Saisha Chauhan", "Sameer Oberoi",
+    "Sanvi Gupta", "Sarthak Trivedi", "Shanaya Kapur", "Shaurya Krishnan", "Shreya Goyal",
+    "Siddharth Nair", "Siya Jain", "Soham Mehta", "Suhana Bajpai", "Tanish Sen",
+    "Tanvi Verma", "Tara Khatri", "Udayan Chandra", "Unnati Gill", "Veer Sharma", 
+    "Vihaan Kapoor", "Vivaan Ahuja", "Yashvi Agrawal", "Yuvan Singhania", "Zara Khan",
+    "Aahana Chakraborty", "Aakash Deshmukh", "Aanya Chowdhury", "Adarsh Mathur", "Anisha Menon",
+    "Arnav Ganguly", "Arya Mukherjee", "Avni Goel", "Dhruv Sharma", "Dia Hegde",
+    "Ishan Rathore", "Ishani Khosla", "Kabir Sinha", "Kavya Pillai", "Krish Reddy",
+    "Kyra Malhotra", "Mannat Singh", "Myra Basu", "Navya Rao", "Neel Puri",
+    "Nysa Tandon", "Parth Sethi", "Preeti Bhat", "Reyansh Kumar", "Rithvik Thapar"
   ];
+  
+  // List of 100 Indian locations for randomization
+  const indianLocations: string[] = [
+    "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", 
+    "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Lucknow",
+    "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal",
+    "Visakhapatnam", "Patna", "Vadodara", "Ghaziabad", "Ludhiana",
+    "Agra", "Nashik", "Faridabad", "Meerut", "Rajkot",
+    "Kalyan", "Vasai", "Varanasi", "Srinagar", "Aurangabad",
+    "Dhanbad", "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi",
+    "Howrah", "Coimbatore", "Jabalpur", "Gwalior", "Vijayawada",
+    "Jodhpur", "Madurai", "Raipur", "Kota", "Chandigarh",
+    "Guwahati", "Solapur", "Hubli", "Mysore", "Tiruchirappalli",
+    "Salem", "Bhubaneswar", "Kochi", "Jamshedpur", "Bhilai",
+    "Amravati", "Cuttak", "Bikaner", "Warangal", "Guntur",
+    "Bhavnagar", "Durgapur", "Asansol", "Nanded", "Kolhapur",
+    "Ajmer", "Akola", "Gulbarga", "Jamnagar", "Ujjain",
+    "Loni", "Siliguri", "Jhansi", "Ulhasnagar", "Nellore",
+    "Jammu", "Sangli", "Mangalore", "Erode", "Belgaum",
+    "Ambattur", "Tirunelveli", "Malegaon", "Gaya", "Jalgaon",
+    "Udaipur", "Maheshtala", "Davanagere", "Kozhikode", "Kurnool",
+    "Rajpur", "Bokaro", "South Dumdum", "Bellary", "Patiala",
+    "Gopalpur", "Agartala", "Bhagalpur", "Muzaffarnagar", "Bhatpara"
+  ];
+  
+  // Generate a random time ago
+  const generateTimeAgo = (): string => {
+    // Random time between 2 minutes and 3 hours
+    const minMinutes = 2;
+    const maxMinutes = 180; // 3 hours in minutes
+    const minutes = Math.floor(Math.random() * (maxMinutes - minMinutes + 1)) + minMinutes;
+    
+    if (minutes < 60) {
+      return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+    } else {
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+      if (remainingMinutes === 0) {
+        return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+      } else {
+        return `${hours}h ${remainingMinutes}m ago`;
+      }
+    }
+  };
   
   const showNextNotification = () => {
     // If dismissed, don't show new notifications
@@ -90,9 +92,13 @@ export const SocialProofNotifications = () => {
     
     // Wait for fade out animation to complete
     setTimeout(() => {
-      // Update to next purchase
-      const nextIndex = (index + 1) % purchases.length;
-      setCurrentPurchase(purchases[nextIndex]);
+      // Update to next purchase with randomized name, location, and time
+      const nextIndex = (index + 1) % indianNames.length;
+      setCurrentPurchase({
+        name: indianNames[nextIndex],
+        location: indianLocations[Math.floor(Math.random() * indianLocations.length)],
+        timeAgo: generateTimeAgo()
+      });
       setIndex(nextIndex);
       
       // Show the new notification
@@ -112,7 +118,11 @@ export const SocialProofNotifications = () => {
   useEffect(() => {
     // Show first notification after a delay
     const firstTimeout = setTimeout(() => {
-      setCurrentPurchase(purchases[0]);
+      setCurrentPurchase({
+        name: indianNames[0],
+        location: indianLocations[Math.floor(Math.random() * indianLocations.length)],
+        timeAgo: generateTimeAgo()
+      });
       setIsVisible(true);
       
       // Auto hide after 3 seconds
@@ -148,24 +158,26 @@ export const SocialProofNotifications = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
-      <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-md p-3 border border-anime-purple/20 flex items-start">
-        <Avatar className="h-8 w-8 mr-2 border border-anime-purple/30">
-          <AvatarImage src={currentPurchase.image} alt={currentPurchase.name} />
-          <AvatarFallback>{currentPurchase.name[0]}</AvatarFallback>
-        </Avatar>
-        <div className="flex-1 min-w-0">
-          <p className="text-xs font-medium truncate">
-            <span className="font-semibold text-anime-purple">{currentPurchase.name}</span> from <span className="text-gray-700">{currentPurchase.location}</span>
-          </p>
-          <p className="text-xs font-medium truncate mb-0.5">purchased the bundle</p>
-          <p className="text-[10px] text-gray-500">{currentPurchase.timeAgo}</p>
-        </div>
+      <div className="bg-black/90 backdrop-blur-sm rounded-lg shadow-md p-3 border border-purple-800/50 flex flex-col">
         <button 
           onClick={handleDismiss}
-          className="text-gray-400 hover:text-gray-600 -mt-1 -mr-1"
+          className="text-gray-400 hover:text-gray-200 self-end -mt-1 -mr-1 mb-1"
         >
-          <X size={14} />
+          ✕
         </button>
+        
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-medium truncate">
+            <span className="font-semibold text-purple-300">{currentPurchase.name}</span> from <span className="text-gray-300">{currentPurchase.location}</span>
+          </p>
+          <p className="text-xs font-medium truncate text-white mb-0.5">purchased the bundle</p>
+          <p className="text-[10px] text-gray-400">{currentPurchase.timeAgo}</p>
+          
+          <div className="mt-2 pt-1 border-t border-purple-800/30 flex items-center justify-center">
+            <ShieldCheck size={12} className="text-green-500 mr-1" />
+            <span className="text-[10px] text-green-400 font-medium">Verified by Proof</span>
+          </div>
+        </div>
       </div>
     </div>
   );
