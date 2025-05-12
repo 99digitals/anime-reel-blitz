@@ -49,7 +49,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       </div>
       
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className="h-10 bg-transparent"></div>
+      <div className="h-14 bg-transparent"></div>
     </>
   );
 };

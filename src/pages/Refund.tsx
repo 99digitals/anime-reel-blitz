@@ -2,7 +2,7 @@
 import { Footer } from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { HeaderNav } from '@/components/HeaderNav';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, MessageCircle } from 'lucide-react';
 
 const Refund = () => {
   const redirectToPurchase = () => {
@@ -26,15 +26,15 @@ const Refund = () => {
                 <h2 className="text-2xl font-semibold text-white m-0">Our Promise</h2>
               </div>
               <p className="text-purple-200">
-                We stand behind the quality of our 1800+ Anime Reels Bundle. If you're not completely satisfied with your 
-                purchase, we offer a hassle-free 30-day money-back guarantee from the date of purchase.
+                We stand behind the quality of our 1800+ Anime Reels Bundle. If you encounter issues with your 
+                purchase, we offer a 30-day refund policy from the date of purchase for specific cases outlined below.
               </p>
             </div>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">1. Refund Eligibility</h2>
             <p>
               To be eligible for a refund, please contact our support team within 30 days of your purchase with your 
-              order details and reason for dissatisfaction.
+              order details and reason for requesting a refund.
             </p>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">2. Refund Situations</h2>
@@ -44,7 +44,6 @@ const Refund = () => {
               <li>The product does not match the description provided</li>
               <li>Technical issues prevent you from accessing or using the product</li>
               <li>Duplicate purchase or accidental purchase</li>
-              <li>You are unsatisfied with the quality of the product</li>
             </ul>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">3. Refund Process</h2>
