@@ -1,11 +1,20 @@
+
 import { Footer } from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { HeaderNav } from '@/components/HeaderNav';
 import { ShieldCheck, MessageCircle } from 'lucide-react';
+import { useEffect } from 'react';
+
 const Refund = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const redirectToPurchase = () => {
     window.open("https://rzp.io/rzp/L0POQliw", "_blank");
   };
+  
   return <div className="min-h-screen bg-gray-900 text-white">
       <HeaderNav redirectToPurchase={redirectToPurchase} />
       
