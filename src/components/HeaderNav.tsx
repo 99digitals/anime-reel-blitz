@@ -44,7 +44,7 @@ export const HeaderNav = ({ redirectToPurchase }: HeaderNavProps) => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 py-2 text-center px-4">
         <p className="text-white font-extrabold text-sm md:text-base animate-pulse">
           <span className="bg-yellow-500 text-gray-900 px-2 py-0.5 rounded mr-2">LIMITED OFFER</span>
-          <span>80% OFF ENDS TODAY! Only {spotsLeft} spots left</span>
+          <span>90% OFF ENDS TODAY! Only {spotsLeft} spots left</span>
         </p>
       </div>
       
