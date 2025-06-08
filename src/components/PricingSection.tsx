@@ -30,7 +30,7 @@ export const PricingSection = () => {
           <div className="bg-purple-900 text-white p-6 text-center">
             <h3 className="text-xl md:text-2xl font-bold">1800+ Anime Reels Bundle</h3>
             <div className="flex items-center justify-center mt-3 space-x-1">
-              <span className="text-3xl md:text-4xl font-bold">₹199</span>
+              <span className="text-3xl md:text-4xl font-bold">₹99</span>
               <span className="text-base opacity-80">one-time</span>
             </div>
             <p className="mt-2 text-purple-300 text-sm">

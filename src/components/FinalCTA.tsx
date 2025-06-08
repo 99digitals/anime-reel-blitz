@@ -38,7 +38,7 @@ export const FinalCTA = ({ redirectToPurchase }: FinalCTAProps) => {
           <div className="mb-8 text-center">
             <p className="text-2xl md:text-3xl font-black mb-2">
               <span className="line-through text-gray-400 text-lg mr-2">₹999</span>
-              <span className="text-white">₹199</span>
+              <span className="text-white">₹99</span>
             </p>
             <p className="text-yellow-400 font-medium">One-time payment • Lifetime access • No recurring fees</p>
           </div>

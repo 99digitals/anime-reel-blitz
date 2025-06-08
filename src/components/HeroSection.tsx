@@ -2,17 +2,22 @@ import { ArrowDown, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const userImages = ["https://img.freepik.com/free-photo/close-up-portrait-woman-with-beautiful-hair-closed-eyes_23-2148286126.jpg?ga=GA1.1.854241204.1746212460&semt=ais_hybrid&w=740", "https://img.freepik.com/free-photo/young-man-thinking-with-pensive-expression-ai-generated_1194-588529.jpg?t=st=1746212759~exp=1746216359~hmac=99b380c7a03f66e68f9a0952aaf53596cf5b4903386cc4fc24f2004235460fa8&w=826", "https://img.freepik.com/free-photo/fashionable-young-woman-standing-front-blue-backdrop_23-2148204718.jpg?t=st=1746212760~exp=1746216360~hmac=b01d8d29b0ab2538a8adfa39c37a644b3f2d25a00b75f0ec89fcf97bd90b1795&w=826", "https://img.freepik.com/free-photo/photorealistic-lawyer-day-celebration_23-2151053984.jpg?t=st=1746212763~exp=1746216363~hmac=27235254b1ad4b87df97dfa17407c944c873efebd5e991cf98daae0027952b58&w=826"];
+
 interface HeroSectionProps {
   redirectToPurchase: () => void;
   scrollToReels: () => void;
 }
+
 export const HeroSection = ({
   redirectToPurchase,
   scrollToReels
 }: HeroSectionProps) => {
   const isMobile = useIsMobile();
-  return <section className="pt-14 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
+  
+  return (
+    <section className="pt-14 pb-12 px-4 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
@@ -27,7 +32,7 @@ export const HeroSection = ({
             </p>
 
             <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-6 py-6 text-lg md:text-xl w-full lg:w-auto font-black tracking-wide shadow-xl animate-pulse-slow mb-4 border-2 border-white" onClick={redirectToPurchase}>
-              YES! I WANT 1800+ REELS - ONLY ₹199
+              YES! I WANT 1800+ REELS - ONLY ₹99
             </Button>
 
             <div className="mt-4 flex items-center justify-center lg:justify-start">
@@ -58,7 +63,7 @@ export const HeroSection = ({
             </div>
             
             <div className="absolute -top-10 -right-10 bg-red-600 text-white font-black py-2 px-4 rounded-full rotate-12 animate-pulse-light shadow-lg border-2 border-white">
-              ₹199 Today Only!
+              ₹99 Today Only!
             </div>
             
             <div className="absolute -bottom-5 -left-5 bg-purple-900 text-white text-sm font-bold py-2 px-4 rounded-full animate-float shadow-lg border-2 border-yellow-400">
@@ -70,5 +75,6 @@ export const HeroSection = ({
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };

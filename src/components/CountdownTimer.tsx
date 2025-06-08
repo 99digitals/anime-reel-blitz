@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Clock, Star } from 'lucide-react';
 
@@ -56,7 +55,7 @@ export const CountdownTimer = () => {
         </div>
         
         <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-5 text-white">
-          This <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">80% Discount</span> Expires Soon!
+          This <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">90% Discount</span> Expires Soon!
         </h2>
         
         <div className="flex flex-col items-center mb-5">
@@ -89,7 +88,7 @@ export const CountdownTimer = () => {
           className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-gray-900 px-4 md:px-8 py-3 text-sm md:text-base font-black rounded-lg shadow-2xl transform transition-transform hover:scale-105 w-full md:w-auto md:min-w-[200px] border-2 border-white"
           onClick={() => window.open("https://rzp.io/rzp/L0POQliw", "_blank")}
         >
-          LOCK IN 80% OFF NOW!
+          LOCK IN 90% OFF NOW!
         </button>
 
         <div className="mt-4 text-white/70 text-sm flex items-center justify-center">
