@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
+import { trackLead } from '@/utils/metaPixel';
 
 interface WhatsAppWidgetProps {
   phoneNumber: string;
@@ -14,6 +15,8 @@ export const WhatsAppWidget = ({ phoneNumber }: WhatsAppWidgetProps) => {
   };
   
   const handleWhatsAppClick = () => {
+    // Track Lead event before opening WhatsApp
+    trackLead();
     window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=Hi!%20%F0%9F%91%8B%0A%0AI%20need%20help%20purchasing%201800%2B%20Anime%20Reels%20Bundle.`, '_blank');
   };
 

@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 import { Footer } from '@/components/Footer';
 import { FAQSection } from '@/components/FAQSection';
@@ -12,9 +13,20 @@ import { PreviewSection } from '@/components/PreviewSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { FinalCTA } from '@/components/FinalCTA';
 import { SocialProofNotifications } from '@/components/SocialProofNotifications';
+import { initializeMetaPixel, trackViewContent, trackInitiateCheckout } from '@/utils/metaPixel';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize Meta Pixel
+    initializeMetaPixel('1660731888189701');
+    
+    // Track ViewContent event
+    trackViewContent();
+  }, []);
+
   const redirectToPurchase = () => {
+    // Track InitiateCheckout event before redirecting
+    trackInitiateCheckout();
     window.open("https://rzp.io/rzp/L0POQliw", "_blank");
   };
   
